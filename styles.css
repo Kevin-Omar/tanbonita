@@ -1,0 +1,208 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: sans-serif;
+  background-color: black;
+  position: relative;
+}
+
+#starsCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 0;
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+#textContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  transition: all 1s ease;
+}
+
+/* Transiciones suaves para todos los hijos */
+#textContainer > * {
+  transition: all 1s ease;
+}
+
+
+
+button#startBtn {
+  padding: 20px 40px;
+  font-size: 22px;
+  background: linear-gradient(135deg, #fff1a0, #fca5a5);
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+button#startBtn:hover {
+  transform: scale(1.05);
+}
+
+#mainText {
+  font-family: 'Playfair Display', serif;
+  font-size: 38px;
+  color: white;
+  text-align: center;
+  white-space: nowrap; /* Mantener en una línea */
+  overflow: hidden;
+  border-right: 2px solid white;
+  width: 0;
+  margin: 0 auto;
+  animation: typing 4s steps(60, end) forwards, blink 0.7s step-end infinite;
+}
+
+/* Efecto de escribir letra por letra */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* Parpadeo del cursor */
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+
+#secondText {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  color: white;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid white;
+  width: 0;
+  margin-top: 20px;
+  animation: typing2 3s steps(40, end) forwards;
+  opacity: 1;
+}
+
+/* Animación typing para segundo texto */
+@keyframes typing2 {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+
+
+#waitText {
+  display: none;
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  color: white;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s ease;
+  margin-top: 30px;
+}
+
+#waitText.slide-up {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+#poemText {
+  display: none;
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  color: white;
+  text-align: center;
+  max-width: 80%;
+  margin: 40px auto 0;
+  line-height: 1.6;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1.5s ease;
+}
+
+#poemText.slide-up {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+#finalMessage {
+  display: none;
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  color: white;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1.5s ease;
+  margin-top: 40px;
+}
+
+#finalMessage.slide-up {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 600px) {
+  .content {
+    width: 90%;
+    padding: 20px;
+  }
+
+  #mainText {
+    font-size: 24px;
+    white-space: normal;
+    word-break: break-word;
+  }
+
+  #secondText {
+    font-size: 20px;
+    white-space: normal;
+    word-break: break-word;
+  }
+
+  #waitText {
+    font-size: 18px;
+  }
+
+  #poemText {
+    font-size: 16px;
+    line-height: 1.4;
+    padding: 0 10px;
+  }
+
+  #finalMessage {
+    font-size: 20px;
+    padding: 0 10px;
+  }
+
+  button#startBtn {
+    font-size: 18px;
+    padding: 15px 30px;
+  }
+}
+html, body {
+  overscroll-behavior: none;
+  touch-action: manipulation;
+}

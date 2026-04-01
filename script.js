@@ -116,7 +116,7 @@ startBtn.addEventListener('click', () => {
   // Mostrar el primer texto
   setTimeout(() => {
     startBtn.style.display = "none";
-    typeWriterText("NO TE VI, PERO SÉ QUE HOY ESTUVISTE TAN BONITA :D", mainText);
+    typeWriterText("MI JAKY, SÉ QUE HOY ESTUVISTE TAN BONITA :D", mainText);
   }, 900);
 
   // Mostrar segundo texto a los 12 segundos
